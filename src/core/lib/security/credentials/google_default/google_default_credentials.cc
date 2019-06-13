@@ -172,6 +172,7 @@ static int is_metadata_server_reachable() {
   detector.pollent = grpc_polling_entity_create_from_pollset(pollset);
   detector.is_done = 0;
   detector.success = 0;
+  detector.response = {};
   memset(&request, 0, sizeof(grpc_httpcli_request));
   request.host = (char*)GRPC_COMPUTE_ENGINE_DETECTION_HOST;
   request.http.path = (char*)"/";
